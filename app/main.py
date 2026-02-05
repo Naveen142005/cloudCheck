@@ -8,7 +8,7 @@ def root():
 <html lang="en">  
 <head>
   <meta charset="UTF-8" >
-  <title>Welcome</title>
+  <title>Welcome</title> 
   <style>
     body {
       margin: 0;
