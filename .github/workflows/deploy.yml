@@ -26,7 +26,9 @@ jobs:
       - name: Get VM External IP
         id: get_ip
         run: |
-          IP=$(gcloud compute instances describe ${{ secrets.VM_NAME }} --zone=${{ secrets.VM_LOCATION }} --format='get(networkInterfaces[0].accessConfigs[0].natIP)')
+          IP=$(gcloud compute instances describe ${{ secrets.VM_NAME }} \
+          --zone=${{ secrets.VM_LOCATION }} \
+          --format='get(networkInterfaces[0].accessConfigs[0].natIP)')
           echo "vm_ip=$IP" >> $GITHUB_OUTPUT
 
       - name: Deploy to GCP VM
